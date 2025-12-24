@@ -3,12 +3,18 @@ FROM ubuntu:latest
 RUN apt-get update \
 	&& apt-get install -y openjdk-21-jre-headless curl
 
+ENV URL="https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar"
+
 WORKDIR /app
 
-RUN curl -o server.jar https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar
+COPY . /app/
 
-RUN echo 'eula=true' > /app/eula.txt
+COPY ./config /app/
+
+RUN chmod +x /app/entrypoint.sh
+
+RUN curl -o server.jar $URL
 
 EXPOSE 25565
 
-ENTRYPOINT [ "java", "-Xmx1024M", "-Xms1024M", "-jar", "server.jar" ]
+ENTRYPOINT [ "sh", "-c", "/app/entrypoint.sh" ]
