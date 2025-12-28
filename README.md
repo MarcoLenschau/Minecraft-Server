@@ -41,5 +41,5 @@ A DevSecOps project for setting up and managing a Minecraft server.
   ```
 - View logs:
   ```bash
-  sudo docker-compose logs -f
+  sudo docker-compose logs 
   ```
