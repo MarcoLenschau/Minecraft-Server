@@ -30,7 +30,7 @@ A DevSecOps project for setting up and managing a Minecraft server.
 
 4. **Start the server:**
     ```bash
-    docker-compose up -d
+    sudo docker-compose up -d
     ```
 
 5. **Access your Minecraft server:**
