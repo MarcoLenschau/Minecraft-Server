@@ -21,16 +21,15 @@ A DevSecOps project for setting up and managing a Minecraft server.
 
 ### Clone the repository
 
-    ```bash
-    git clone https://github.com/MarcoLenschau/Minecraft-Server.git
-    cd Minecraft-Server
-    ```
+```bash
+git clone https://github.com/MarcoLenschau/Minecraft-Server.git
+```
 
 ### Change the directory
 
-    ```bash
-    cd Minecraft-Server
-    ```
+```bash
+cd Minecraft-Server
+```
 
 ### Create .env file
 
