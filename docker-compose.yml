@@ -8,7 +8,8 @@ services:
     volumes:
       - minecraft-data:/app
     env_file:
-      - .env.example
+      - example.env
+    restart: on-failure
     
 volumes:
   minecraft-data:

@@ -1,40 +1,56 @@
 # Minecraft Server
 
-A DevSecOps project for setting up and managing a Minecraft server.
-
 ## Table of Contents
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
+1. [Overview](#overview)
+2. [Prerequisites](#prerequisites)
+3. [Quickstart](#quickstart)
+4. [Usage](#usage)
 
-## Requirements
+## Overview
+
+A DevSecOps project for setting up and managing a Minecraft server.
+
+## Prerequisites
 
 - Docker
 - Docker Compose 
 - Git
 
-## Installation
+## Quickstart
 
-1. **Clone the repository:**
+### Clone the repository
+
     ```bash
-    git clone https://github.com/your-username/Minecraft-Server.git
+    git clone https://github.com/MarcoLenschau/Minecraft-Server.git
     cd Minecraft-Server
     ```
 
-2. **Configure environment variables:**
-    - Copy `.env.example` to `.env` and adjust settings as needed.
+### Change the directory
 
-3. **Update the environment file reference in `docker-compose.yml`:**
-    - Open `docker-compose.yml` and change the environment file path on line 11 from `.env.example` to `.env`.
-
-4. **Start the server:**
     ```bash
-    sudo docker-compose up -d
+    cd Minecraft-Server
     ```
 
-5. **Access your Minecraft server:**
-    - Connect using your server's IP and the configured port.
+### Create .env file
+
+```bash
+mv example.env production.env
+```
+
+**Important:** After renaming the file:
+1. Open `production.env` and enter your own values for the database credentials
+2. Update the path to the environment file in `docker-compose.yml` (if it still references `example.env`)
+
+### Start the Container
+
+```bash
+docker-compose up -d
+```
+
+### How to access the App
+
+Connect using your server's IP and the configured port.
 
 ## Usage
 
