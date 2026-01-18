@@ -2,7 +2,9 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-COPY . /app/
+COPY server.jar /app/
+
+COPY entrypoint.sh /app/
 
 RUN cat >> /app/server.properties <<'EOL'
 white-list=${WHITELIST}
