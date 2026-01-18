@@ -3,13 +3,11 @@ services:
   minecraft:
     build: .
     container_name: minecraft-server
-    ports: 
+    ports:
       - "9000:25565"
     volumes:
       - minecraft-data:/app
-    env_file:
-      - production.env
     restart: on-failure
-    
+
 volumes:
   minecraft-data:

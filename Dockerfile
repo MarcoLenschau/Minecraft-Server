@@ -1,7 +1,5 @@
 FROM maven:3.9-eclipse-temurin-21
 
-ENV URL="https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar"
-
 WORKDIR /app
 
 COPY . /app/
@@ -10,8 +8,6 @@ COPY ./config /app/
 
 RUN chmod +x /app/entrypoint.sh
 
-RUN curl -o server.jar $URL
-
 EXPOSE 25565
 
-ENTRYPOINT [ "sh", "-c", "/app/entrypoint.sh" ]
+ENTRYPOINT [ "java",  "-Xmx1024M", "-Xms1024M", "-jar", "server.jar", "-nogui" ]
