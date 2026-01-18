@@ -14,6 +14,7 @@ A DevSecOps project for setting up and managing a Minecraft server.
 - Docker
 - Docker Compose 
 - Git
+- PIP (only for testing)
 
 ## Quickstart
 
@@ -54,6 +55,13 @@ Connect using your server's IP and the configured port.
   ```bash
   sudo docker-compose down
   ```
+
+- Stop the server and remove all persistent data (world, settings, player data):
+  ```bash
+  sudo docker-compose down -v
+  ```
+  **Warning:** This will permanently delete all server data including worlds and player progress!
+
 - View logs:
   ```bash
   sudo docker-compose logs 
@@ -70,7 +78,7 @@ pip install mcstatus
 ```
 
 ```bash
-python3 -m mcstatus localhost:9000 status
+python3 -m mcstatus localhost:9000
 ```
 
 ```bash
@@ -78,5 +86,5 @@ python3 -m mcstatus localhost:9000 ping
 ```
 
 ```bash
-python3 -m mcstatus localhost:9000 query
+python3 -m mcstatus localhost:9000 status
 ```
