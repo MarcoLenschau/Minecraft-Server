@@ -1,12 +1,15 @@
-version: 3.7
+version: "3.7"
 services:
   minecraft:
     build: .
     container_name: minecraft-server
-    ports: 
+    ports:
       - "8080:25565"
     volumes:
       - minecraft-data:/app
+    env_file: 
+      - production.env
+    restart: on-failure
 
 volumes:
   minecraft-data:

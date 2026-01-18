@@ -1,14 +1,13 @@
-FROM ubuntu:latest
-
-RUN apt-get update \
-	&& apt-get install -y openjdk-21-jre-headless curl
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-RUN curl -o server.jar https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar
+COPY server.jar /app/
 
-RUN echo 'eula=true' > /app/eula.txt
+COPY entrypoint.sh /app/
+
+RUN chmod +x /app/entrypoint.sh
 
 EXPOSE 25565
 
-ENTRYPOINT [ "java", "-Xmx1024M", "-Xms1024M", "-jar", "server.jar" ]
+ENTRYPOINT [ "sh", "-c", "/app/entrypoint.sh" ]
