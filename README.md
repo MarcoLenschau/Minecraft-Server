@@ -1,15 +1,12 @@
 # Minecraft Server
 
+A DevSecOps project for setting up and managing a Minecraft server.
+
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Prerequisites](#prerequisites)
-3. [Quickstart](#quickstart)
-4. [Usage](#usage)
-
-## Overview
-
-A DevSecOps project for setting up and managing a Minecraft server.
+1. [Prerequisites](#prerequisites)
+2. [Quickstart](#quickstart)
+3. [Usage](#usage)
 
 ## Prerequisites
 
@@ -39,7 +36,6 @@ mv example.env production.env
 
 **Important:** After renaming the file:
 1. Open `production.env` and enter your own values
-2. Update the path to the environment file in `docker-compose.yml` (if it still references `example.env`)
 
 ### Start the Container
 
