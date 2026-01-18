@@ -70,13 +70,13 @@ pip install mcstatus
 ```
 
 ```bash
-python3 -m mcstatus localhost:25565 status
+python3 -m mcstatus localhost:9000 status
 ```
 
 ```bash
-python3 -m mcstatus localhost:25565 ping
+python3 -m mcstatus localhost:9000 ping
 ```
 
 ```bash
-python3 -m mcstatus localhost:25565 query
+python3 -m mcstatus localhost:9000 query
 ```
