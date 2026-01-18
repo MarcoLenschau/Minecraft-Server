@@ -4,6 +4,14 @@ WORKDIR /app
 
 COPY . /app/
 
+RUN cat >> /app/server.properties <<'EOL'
+white-list=${WHITELIST}
+EOL
+
+RUN cat >> /app/eula.txt <<'EOL'
+eula=${EULA}
+EOL
+
 RUN chmod +x /app/entrypoint.sh
 
 EXPOSE 25565

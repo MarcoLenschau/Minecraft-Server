@@ -7,6 +7,8 @@ services:
       - "9000:25565"
     volumes:
       - minecraft-data:/app
+    env_file: 
+      - production.env
     restart: on-failure
 
 volumes:

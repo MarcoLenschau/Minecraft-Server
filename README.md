@@ -7,7 +7,6 @@ A DevSecOps project for setting up and managing a Minecraft server.
 1. [Prerequisites](#prerequisites)
 2. [Quickstart](#quickstart)
 3. [Usage](#usage)
-4. [Testing] (#testing)
 
 ## Prerequisites
 
@@ -36,8 +35,8 @@ cd Minecraft-Server
 mv example.env production.env
 ```
 
-**Important:** After renaming the file:
-1. Open `production.env` and enter your own values
+> [!IMPORTANT]
+> Open `production.env` and enter your own values
 
 ### Start the Container
 
@@ -60,14 +59,16 @@ Connect using your server's IP and the configured port.
   ```bash
   sudo docker-compose down -v
   ```
-  **Warning:** This will permanently delete all server data including worlds and player progress!
+
+> [!WARNING]
+> This will permanently delete all server data including worlds and player progress!
 
 - View logs:
   ```bash
   sudo docker-compose logs 
   ```
 
-## Testing 
+## How to test server status 
 
 ```bash
 sudo apt install python3-pip -y
