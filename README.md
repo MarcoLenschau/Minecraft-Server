@@ -7,6 +7,7 @@ A DevSecOps project for setting up and managing a Minecraft server.
 1. [Prerequisites](#prerequisites)
 2. [Quickstart](#quickstart)
 3. [Usage](#usage)
+4. [Testing] (#testing)
 
 ## Prerequisites
 
@@ -40,7 +41,7 @@ mv example.env production.env
 ### Start the Container
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 ### How to access the App
@@ -57,3 +58,25 @@ Connect using your server's IP and the configured port.
   ```bash
   sudo docker-compose logs 
   ```
+
+## Testing 
+
+```bash
+sudo apt install python3-pip -y
+```
+
+```bash
+pip install mcstatus
+```
+
+```bash
+python3 -m mcstatus localhost:25565 status
+```
+
+```bash
+python3 -m mcstatus localhost:25565 ping
+```
+
+```bash
+python3 -m mcstatus localhost:25565 query
+```
